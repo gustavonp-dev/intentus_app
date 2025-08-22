@@ -11,11 +11,12 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import {
   SafeAreaProvider,
 } from 'react-native-safe-area-context';
-import HomeView from './app/ui/home/home_view';
+
+import PlannerView from './app/planner/ui/planner/planner_view';
 
 const RootStack = createDrawerNavigator({
   screens: {
-    Home: HomeView,
+    Planner: PlannerView,
   },
 });
 
