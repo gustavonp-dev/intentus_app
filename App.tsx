@@ -5,31 +5,26 @@
  * @format
  */
 
-import { createStaticNavigation } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-
-import {
-  SafeAreaProvider,
-} from 'react-native-safe-area-context';
-
-import PlannerView from './app/planner/ui/planner/planner_view';
-
-const RootStack = createDrawerNavigator({
-  screens: {
-    Planner: PlannerView,
-  },
-});
-
-const Navigation = createStaticNavigation(RootStack);
+import { SafeAreaProvider, SafeAreaView }  from 'react-native-safe-area-context';
+import Navigation from './app/shared/ui/components/blueprints/navigation';
+import { StyleSheet } from "react-native";
 
 function App() {
   
   return (
     <SafeAreaProvider>
-      <Navigation/>
+     <SafeAreaView style={styles.container}>
+        <Navigation/>
+     </SafeAreaView>
     </SafeAreaProvider>
   );
+
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default App;
